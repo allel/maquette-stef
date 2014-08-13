@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" jdk="Android API 17 Platform (1)" jdk_type="Android SDK">
+	<output-test url="file://$MODULE_DIR$/out/test/android"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="sass-stdlib" scope="PROVIDED"/>
+	<levels>
+		<level name="cordova-3.2.0" value="project"/>
+	</levels>
+</component>

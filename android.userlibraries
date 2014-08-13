@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="cordova-3.2.0-36ab0d4292e26262ec817f44b3f3bec6">
+    <archive path="C:/Documents and Settings/ben-brahim.a/My Documents/Dev/maquette-stef/bin/dexedLibs/cordova-3.2.0-36ab0d4292e26262ec817f44b3f3bec6.jar" />
+  </library>
+  <library name="cordova-3.2.0">
+    <archive path="C:/Documents and Settings/ben-brahim.a/My Documents/Dev/maquette-stef/libs/cordova-3.2.0.jar" />
+  </library>
+</eclipse-userlibraries>
+

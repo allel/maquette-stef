@@ -1,8 +1,6 @@
 package com.allel.stef.demo.mtrack;
 
-import android.app.Activity;
 import android.os.Bundle;
-import org.apache.cordova.Config;
 import org.apache.cordova.CordovaActivity;
 
 /**
@@ -21,8 +19,8 @@ public class MainActivity extends CordovaActivity {
         super.onCreate(savedInstanceState);
         super.init();
         // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html")
+        //super.loadUrl(Config.getStartUrl(),3000);
+        super.loadUrl("file:///android_asset/www/index.html",3000);
     }
 
 
