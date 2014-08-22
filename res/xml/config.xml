@@ -5,6 +5,11 @@
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
     <preference name="loglevel" value="DEBUG" />
+
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>

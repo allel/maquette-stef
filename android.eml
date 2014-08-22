@@ -3,8 +3,8 @@
 	<output-test url="file://$MODULE_DIR$/out/test/android"/>
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
-	<lib name="sass-stdlib" scope="PROVIDED"/>
 	<levels>
 		<level name="cordova-3.2.0" value="project"/>
+		<level name="sass-stdlib" value="project"/>
 	</levels>
 </component>

@@ -107,8 +107,44 @@ function menu(option){
         myScroll.enable();
     }
     else if(option == 2){
+
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://quiet-refuge-1119.herokuapp.com/api/trip",
+            success: function(data){
+                if(data.trip==null){
+
+                    setTitle('Point d\'arret ');
+                    $('#PA').empty();
+                    $('#PA').append("<div class='box'><p class='titleBox'><i class='fa fa-stop'></i>Une erreur est survenue sur le serveur :/</p>");
+
+                }else {
+                    //console.log("good "+data.trip.tripCode);
+                    setTitle('Point d\'arret ' + data.trip.tripCode);
+                    $('#PA').empty();
+                    $.each(data.stop, function (key, dataStop) {
+                        $('#PA').append("<div class='box'><p class='titleBox'><i class='fa fa-level-up fa-fw'></i>" + dataStop.libel + "</p>" +
+                            "<hr>" +
+                            "<h4>Street :" + dataStop.street + "</h4>" +
+                            "<h5>City   :" + dataStop.city + "</h5>" +
+                            "<p>Operation type :" + dataStop.operationType + "</p><br>" +
+                            "<p>Arrival stop description " + dataStop.arrivalStopDescription + "</p><br>" +
+                            "<b>Date scheduled : " + dataStop.dateScheduled + "</b><br>" +
+                            "<b>Scheduled departure Time " + dataStop.scheduledDepartureTime + "</b><br>" +
+                            "</div>");
+                    })
+
+                    $('#PA').append("<hr><div class='spinner'></div>");
+                }
+            },
+            error: function(data){
+                setTitle('Point d\'arret');
+                alert('Erreur de connexion');
+            }
+        });
         $btnLocation.hide();
-        setTitle('Point d\'arret');
+        //setTitle('Point d\'arret');
         myScroll.enable();
     }
     else if(option == 3){
@@ -149,7 +185,7 @@ function setTitle(title){
 var mapObject = {
 
     init : function(){
-        var map, markers = [], openInfoWindow, bounds = new google.maps.LatLngBounds();
+        var map, markers = [], openInfoWindow;// bounds = new google.maps.LatLngBounds();
         $('div#mapCanvas').css({'height': heightBody - (heightBody/2) + 10 + 'px'});
         var markers = [];
         var latlng = new google.maps.LatLng(43.978518, 15.383649);
@@ -159,7 +195,7 @@ var mapObject = {
             disableDefaultUI: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+        //map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
 
         myScroll.enable();
         myScroll.refresh();
